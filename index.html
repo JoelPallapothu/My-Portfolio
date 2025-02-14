@@ -1,0 +1,480 @@
+<!-- 
+Online HTML, CSS and JavaScript editor to run code online.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      background-color: #5c0549fd;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 8px rgb(0, 0, 0);
+      width: 100%;
+      z-index: 1;
+      /* height: 100px; */
+      animation: slideDown 1s ease;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      animation: fadeIn 1s ease;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 1.5rem;
+      animation: fadeIn 1s ease;
+    }
+
+    nav ul li a {
+      color: #f5e6d9;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      animation: fadeIn 1s ease;
+    }
+
+    nav ul li a:hover {
+      color: #df7110;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem;
+      text-align: center;
+      animation: fadeIn 1s ease;
+      padding-bottom: 3rem;
+    }
+
+    #home,#about-me,#contact,#skills,#projects {
+       margin-top: 250px;
+       
+      padding: 7rem;
+
+    }
+
+    #home {
+      background: linear-gradient(to right, #F8F9FA, #F8F9FA);
+      color: rgb(19, 2, 2);
+      padding: 5rem 2rem;
+      animation: fadeInScale 1s ease;
+      padding-top: 350px;
+    }
+
+    #about-me {
+      background-color: #eae0d5;
+      padding: 2rem;
+      border-top: 4px solid #5a3e36;
+      animation: fadeUp 1s ease;
+      padding-top: 0px;
+    }
+
+    #portfolio,
+    #contact {
+      background-color: #fdfaf6;
+      animation: fadeIn 1s ease;
+      padding-top: 300px;
+    }
+
+    /* Hero Content */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 110vh;
+      padding-block: 2rem;
+      animation: fadeInScale 1s ease;
+    }
+
+    .hero-content img {
+      border-radius: 50%;
+      border: 6px solid #f8d4b4;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      animation: scaleIn 1s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      margin-top: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      font-style: italic;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Skills Section */
+    .skills-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .skill {
+      width: 60%;
+      text-align: left;
+      margin: 1rem 0;
+      animation: fadeIn 1s ease;
+    }
+
+    .skill p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      animation: fadeIn 1s ease;
+    }
+
+    .progress {
+      width: 100%;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 12px;
+      animation: fadeIn 1s ease;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: #aa6622;
+      animation: scaleIn 1s ease;
+    }
+
+    /* Project Cards */
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeIn 1s ease;
+    }
+
+    .project-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 1.5rem;
+      margin: 1rem;
+      width: 320px;
+      transition: transform 0.3s ease;
+      animation: fadeIn 1s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      border-radius: 10px;
+      width: 100%;
+      height: auto;
+      animation: fadeIn 1s ease;
+    }
+
+    .project-card h3 {
+      font-size: 1.6rem;
+      margin: 1rem 0 0.5rem;
+      animation: fadeIn 1s ease;
+    }
+
+    .project-card p {
+      font-size: 1.1rem;
+      color: #ffffff;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background-color: #0e9cbc;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      animation: fadeIn 1s ease;
+    }
+
+    .btn:hover {
+      background-color: #1ea28f;
+      transform: scale(1.05);
+    }
+
+    /* Contact Form */
+    form input,
+    form textarea {
+      width: 90%;
+      max-width: 600px;
+      padding: 12px;
+      margin: 12px 0;
+      border: 2px solid #dcd2c8;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #f8f8f8;
+      animation: fadeIn 1s ease;
+    }
+
+    form button {
+      background-color: #1ea28f;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+      animation: fadeIn 1s ease;
+    }
+
+    form button:hover {
+      background-color: #8e6b55;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #5c0549d2;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      animation: fadeIn 1s ease;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Scroll Animations */
+    .scroll-animation {
+      opacity: 1;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .scroll-animation.fadeIn {
+      transform: translateY(20px);
+    }
+
+    .scroll-animation.fadeIn.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h2>MY PORTFOLIO</h2>
+  
+        <a class="btn" href="#Home">Home</a>
+        <a class="btn" href="#About">About</a>
+        <a class="btn" href="#Skills">Skills</a>
+        <a class="btn" href="#Projects">Projects</a>
+        <a class="btn" href="#Contact me">Contact Me</a>
+      
+    </nav>
+  </header>
+
+  <section id="Home" class="scroll-animation fadeIn">
+    <div class="hero-content">
+      <img src="./profile.jpg" alt="profile picture" width="315" height="315">
+      <h1>Hi, I'm Joel Pallapothu</h1>
+      <p>I'm a Passionate web developer</p>
+      <a class="btn" href="mailto:pallapothujoel@gmail.com">Hire Me</a>
+    </div>
+  </section>
+
+  <section id="About" class="scroll-animation fadeIn">
+    <div class="about-content">
+      <h1>ABOUT ME</h1>
+      <p>I'm a passionate developer with experience in building high-quality, scalable, and efficient applications.
+        With a strong background in [mention your key skills or technologies, e.g., JavaScript, Python, React, etc.], I
+        have worked on a variety of projects ranging from web applications to backend systems. My focus is on writing
+        clean, maintainable code while delivering exceptional user experiences.</p>
+      <a class="btn" href="tel:+918498958892">Phone</a>
+      <a class="btn" href="mailto:pallapothujoel@gmail.com">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/joel-pallapothu-763913315/">LinkedIn</a>
+      <a class="btn" href="https://www.instagram.com/juzz_joel?utm_source=qr&igsh=OHM3MzVjNmJxdTFw">Instagram</a>
+      <p>Let's connect and create something amazing together! Feel free to reach out to me via email or social media.</p>
+    </div>
+  </section>
+
+  <section id="Skills" class="scroll-animation fadeIn">
+    <h2>SKILLS</h2>
+    <div class="skill">
+      <p>HTML</p>
+      <div class="progress">
+        <div class="progress-bar" style="width: 90%;"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <p>CSS</p>
+      <div class="progress">
+        <div class="progress-bar" style="width: 75%;"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <p>JavaScript</p>
+      <div class="progress">
+        <div class="progress-bar" style="width: 70%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Projects" class="scroll-animation fadeIn">
+    <h2>PROJECTS</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Shopping Website</h3>
+        <p>A shopping website showcasing my work.</p>
+        <img src="./AJIO.jpg" alt="web Project" width="300" height="150">
+        <a class="btn" href="https://www.ajio.com/">View Project</a>
+        <a class="btn" href="intro.html">Back to home</a>
+      </div>
+      <div class="project-card">
+        <h3>Market Place Website</h3>
+        <p>Built a fully functional online store with payment integration.</p>
+        <img src="./SWIGGY.jpg" alt="Market Place Website" width="300" height="150">
+        <a href="https://www.swiggy.com/restaurants" class="btn">View Project</a>
+        <a class="btn" href="intro.html">Back to home</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="Contact me" class="scroll-animation fadeIn">
+    <h2>CONTACT ME</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required><br></br>
+      <input type="email" placeholder="Your Email" required><br></br>
+      <textarea placeholder="Your Message" required></textarea>
+      <br>
+      <a class="btn" href="mailto:pallapothujoel@gmail.com">Email us</a>
+    </form>
+  </section>
+
+  <footer class="scroll-animation fadeIn">
+    <p>&copy; 2025 Joel Pallapothu. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollElements = document.querySelectorAll('.scroll-animation');
+
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+          elementTop <=
+          (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+      };
+
+      const displayScrollElement = (element) => {
+        element.classList.add('visible');
+      };
+
+      const hideScrollElement = (element) => {
+        element.classList.remove('visible');
+      };
+
+      const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+          if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+          } else {
+            hideScrollElement(el);
+          }
+        });
+      };
+
+      window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+      });
+    });
+  </script>
+</body>
+
+</html>
